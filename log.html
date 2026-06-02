@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <style>
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#ede9fe,#dbeafe,#e0e7ff); /* purple-white → blue-white mix */
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:20px;
+        }
+
+        .form-container{
+            background:linear-gradient(135deg,#ffffff,#f8f6ff,#f0f4ff); /* white + soft blue/purple tones */
+            width:100%;
+            max-width:420px;
+            padding:30px;
+            border-radius:16px;
+            box-shadow:0 10px 30px rgba(76,29,149,0.12);
+            border:1px solid #e0e7ff;
+        }
+
+        h1{
+            font-size:28px;
+            color:#4338ca;
+            margin-bottom:8px;
+            text-align:center;
+        }
+
+        .subtitle{
+            color:#6d28d9;
+            margin-bottom:24px;
+            font-size:14px;
+            text-align:center;
+        }
+
+        .form-group{
+            margin-bottom:18px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:600;
+            color:#312e81;
+            font-size:14px;
+        }
+
+        input{
+            width:100%;
+            padding:12px 14px;
+            border:1px solid #bfdbfe;
+            border-radius:10px;
+            font-size:14px;
+            outline:none;
+            transition:0.3s;
+            background:#ffffff;
+        }
+
+        input:focus{
+            border-color:#7c3aed;
+            box-shadow:0 0 0 3px rgba(124,58,237,0.15);
+        }
+
+        .button-group{
+            display:flex;
+            gap:12px;
+            margin-top:24px;
+        }
+
+        button, .home-link{
+            flex:1;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            font-size:15px;
+            font-weight:bold;
+            cursor:pointer;
+            text-align:center;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .btn-primary{
+            background:linear-gradient(135deg,#7c3aed,#3b82f6,#a5b4fc); /* purple → blue → pale blue */
+            color:white;
+        }
+
+        .btn-primary:hover{
+            background:linear-gradient(135deg,#5b21b6,#1d4ed8,#818cf8);
+        }
+
+        .btn-secondary{
+            background:linear-gradient(135deg,#ede9fe,#e0e7ff);
+            color:#4c1d95;
+        }
+
+        .btn-secondary:hover{
+            background:linear-gradient(135deg,#ddd6fe,#bfdbfe);
+        }
+
+        .bottom-text{
+            text-align:center;
+            margin-top:18px;
+            font-size:14px;
+            color:#374151;
+        }
+
+        .bottom-text a{
+            color:#6d28d9;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .bottom-text a:hover{
+            color:#2563eb;
+        }
+
+        .top-link{
+            display:block;
+            text-align:center;
+            margin-bottom:18px;
+            color:#6d28d9;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .top-link:hover{
+            color:#2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <a href="index.html" class="top-link">← Back to Home</a>
+
+        <h1>Log In</h1>
+        <p class="subtitle">Sign in to your account to continue.</p>
+
+        <form action="login.php" method="POST">
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+
+            <div class="button-group">
+                <a href="index.html" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Log In</button>
+            </div>
+
+        </form>
+
+        <p class="bottom-text">
+            Don't have an account yet?
+            <a href="inscip.html">Create an account</a>
+        </p>
+    </div>
+
+</body>
+</html>

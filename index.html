@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shopping | Our Perfumes</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f8f6ff; /* soft white-purple tint */
+            color:#2a2454;
+        }
+
+        header{
+            background:linear-gradient(135deg,#4c1d95,#2563eb,#93c5fd); /* purple → blue → light blue mix */
+            color:white;
+            padding:18px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:15px;
+            position:sticky;
+            top:0;
+            border-bottom:2px solid #e0e7ff;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            color:#ffffff;
+            text-shadow:0 0 6px #d8b4fe;
+        }
+
+        nav{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        nav a{
+            color:#ffffff;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#c7d2fe;
+            text-shadow:0 0 4px #ffffff;
+        }
+
+        .hero{
+            background:linear-gradient(135deg,#eef2ff,#ddd6fe,#dbeafe); /* white → light purple → light blue */
+            padding:50px 20px;
+            text-align:center;
+            border-radius:0 0 20px 20px;
+        }
+
+        .hero h1{
+            font-size:38px;
+            margin-bottom:10px;
+            color:#4338ca;
+        }
+
+        .hero p{
+            color:#5b21b6;
+            font-size:16px;
+        }
+
+        .container{
+            width:92%;
+            max-width:1350px;
+            margin:40px auto;
+        }
+
+        .section-title{
+            font-size:30px;
+            margin-bottom:25px;
+            color:#4c1d95;
+            border-bottom:2px solid #bfdbfe;
+            padding-bottom:6px;
+        }
+
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            gap:22px;
+        }
+
+        .card{
+            background:linear-gradient(135deg,#ffffff,#f0f4ff,#f3e8ff); /* white with soft blue/purple tones */
+            border-radius:16px;
+            overflow:hidden;
+            box-shadow:0 8px 24px rgba(76,29,149,0.12);
+            transition:0.3s;
+            border:1px solid #e0e7ff;
+        }
+
+        .card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 12px 28px rgba(37,99,235,0.2);
+        }
+
+        .card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+            display:block;
+            background:#e0e7ff;
+        }
+
+        .card-content{
+            padding:16px;
+        }
+
+        .card h3{
+            font-size:18px;
+            margin-bottom:8px;
+            color:#312e81;
+            min-height:44px;
+        }
+
+        .ref{
+            font-size:14px;
+            color:#6d28d9;
+            margin-bottom:8px;
+        }
+
+        .price{
+            font-size:22px;
+            color:#2563eb;
+            font-weight:bold;
+            margin-bottom:14px;
+        }
+
+        .btn{
+            display:block;
+            text-align:center;
+            background:linear-gradient(135deg,#7c3aed,#3b82f6,#a5b4fc); /* purple → blue → pale blue */
+            color:white;
+            text-decoration:none;
+            padding:12px;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:linear-gradient(135deg,#5b21b6,#1d4ed8,#818cf8);
+        }
+
+        footer{
+            margin-top:50px;
+            background:linear-gradient(135deg,#4c1d95,#2563eb,#e0e7ff);
+            color:white;
+            text-align:center;
+            padding:22px;
+        }
+
+        @media(max-width:768px){
+            .hero h1{
+                font-size:30px;
+            }
+
+            header{
+                padding:16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">E-Shopping</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Products</a>
+            <a href="log.html">Login</a>
+            <a href="inscip.html">Register</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to our perfume store</h1>
+        <p>Discover our products and easily order your favorite fragrance.</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Our Products</h2>
+
+        <div class="products">
+
+            <div class="card">
+                <img src="perfume_1.jpg" alt="Midnight Rose">
+                <div class="card-content">
+                    <h3>Midnight Rose</h3>
+                    <p class="ref">Reference: P001</p>
+                    <p class="price">15000 DA</p>
+                    <a class="btn" href="product.html?name=Midnight%20Rose&price=15000&ref=P001&seller=BeautyHub&image=perfume_1.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_2.jpg" alt="Ocean Breeze">
+                <div class="card-content">
+                    <h3>Ocean Breeze</h3>
+                    <p class="ref">Reference: P002</p>
+                    <p class="price">10000 DA</p>
+                    <a class="btn" href="product.html?name=Ocean%20Breeze&price=10000&ref=P002&seller=BeautyHub&image=perfume_2.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_3.jpg" alt="Vanilla Cloud">
+                <div class="card-content">
+                    <h3>Vanilla Cloud</h3>
+                    <p class="ref">Reference: P003</p>
+                    <p class="price">13000 DA</p>
+                    <a class="btn" href="product.html?name=Vanilla%20Cloud&price=13000&ref=P003&seller=BeautyHub&image=perfume_3.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_4.jpg" alt="Golden Oud">
+                <div class="card-content">
+                    <h3>Golden Oud</h3>
+                    <p class="ref">Reference: P004</p>
+                    <p class="price">12000 DA</p>
+                    <a class="btn" href="product.html?name=Golden%20Oud&price=12000&ref=P004&seller=BeautyHub&image=perfume_4.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_5.jpg" alt="Citrus Burst">
+                <div class="card-content">
+                    <h3>Citrus Burst</h3>
+                    <p class="ref">Reference: P005</p>
+                    <p class="price">11000 DA</p>
+                    <a class="btn" href="product.html?name=Citrus%20Burst&price=11000&ref=P005&seller=BeautyHub&image=perfume_5.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_6.jpg" alt="Woody Essence">
+                <div class="card-content">
+                    <h3>Woody Essence</h3>
+                    <p class="ref">Reference: P006</p>
+                    <p class="price">16000 DA</p>
+                    <a class="btn" href="product.html?name=Woody%20Essence&price=16000&ref=P006&seller=BeautyHub&image=perfume_6.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_7.jpg" alt="Fresh Lavender">
+                <div class="card-content">
+                    <h3>Fresh Lavender</h3>
+                    <p class="ref">Reference: P007</p>
+                    <p class="price">3000 DA</p>
+                    <a class="btn" href="product.html?name=Fresh%20Lavender&price=3000&ref=P007&seller=BeautyHub&image=perfume_7.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_8.jpg" alt="White Musk">
+                <div class="card-content">
+                    <h3>White Musk</h3>
+                    <p class="ref">Reference: P008</p>
+                    <p class="price">18000 DA</p>
+                    <a class="btn" href="product.html?name=White%20Musk&price=18000&ref=P008&seller=BeautyHub&image=perfume_8.jpg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_9.png" alt="Amber Glow">
+                <div class="card-content">
+                    <h3>Amber Glow</h3>
+                    <p class="ref">Reference: P009</p>
+                    <p class="price">19000 DA</p>
+                    <a class="btn" href="product.html?name=Amber%20Glow&price=19000&ref=P009&seller=BeautyHub&image=erfume_9.png">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="perfume_10.png" alt="Jasmine Dream">
+                <div class="card-content">
+                    <h3>Jasmine Dream</h3>
+                    <p class="ref">Reference: P010</p>
+                    <p class="price">15000 DA</p>
+                    <a class="btn" href="product.html?name=Jasmine%20Dream&price=15000&ref=P010&seller=BeautyHub&image=perfume_10.png">Order Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>©️ Mehnana Salah Eddine</p>
+    </footer>
+
+</body>
+</html>

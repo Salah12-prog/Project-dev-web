@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f8f6ff; /* soft white-purple base */
+            color:#2a2454;
+        }
+
+        header{
+            background:linear-gradient(135deg,#4c1d95,#2563eb,#93c5fd); /* purple → blue → light blue */
+            color:white;
+            padding:18px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:15px;
+            border-bottom:2px solid #e0e7ff;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            text-shadow:0 0 6px #d8b4fe;
+        }
+
+        nav{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#c7d2fe;
+            text-shadow:0 0 4px #ffffff;
+        }
+
+        .container{
+            width:92%;
+            max-width:1200px;
+            margin:40px auto;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:30px;
+        }
+
+        .image-box, .info-box{
+            background:linear-gradient(135deg,#ffffff,#f0f4ff,#f3e8ff); /* white + soft blue/purple tones */
+            border-radius:18px;
+            box-shadow:0 8px 24px rgba(76,29,149,0.12);
+            padding:25px;
+            border:1px solid #e0e7ff;
+        }
+
+        .image-box img{
+            width:100%;
+            height:450px;
+            object-fit:cover;
+            border-radius:14px;
+            background:#e0e7ff;
+        }
+
+        .info-box h1{
+            font-size:32px;
+            margin-bottom:10px;
+            color:#4338ca;
+        }
+
+        .ref, .seller{
+            color:#6d28d9;
+            margin-bottom:10px;
+            font-size:15px;
+        }
+
+        .price{
+            font-size:30px;
+            color:#2563eb;
+            font-weight:bold;
+            margin:18px 0;
+        }
+
+        .form-group{
+            margin-bottom:18px;
+        }
+
+        label{
+            display:block;
+            font-weight:bold;
+            margin-bottom:8px;
+            color:#312e81;
+        }
+
+        input, select, textarea{
+            width:100%;
+            padding:12px 14px;
+            border:1px solid #bfdbfe;
+            border-radius:10px;
+            font-size:14px;
+            outline:none;
+            background:#ffffff;
+        }
+
+        input:focus, select:focus, textarea:focus{
+            border-color:#7c3aed;
+            box-shadow:0 0 0 3px rgba(124,58,237,0.15);
+        }
+
+        textarea{
+            min-height:100px;
+            resize:vertical;
+        }
+
+        .scent-options{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-top:6px;
+        }
+
+        .scent-options label{
+            font-weight:normal;
+            display:flex;
+            align-items:center;
+            gap:8px;
+            margin-bottom:0;
+            color:#312e81;
+        }
+
+        .scent-options input{
+            width:auto;
+        }
+
+        .total-box{
+            background:linear-gradient(135deg,#ede9fe,#dbeafe); /* purple-white → blue-white */
+            border:1px solid #c4b5fd;
+            padding:15px;
+            border-radius:12px;
+            font-weight:bold;
+            color:#4c1d95;
+            text-align:center;
+            margin-top:10px;
+        }
+
+        .buttons{
+            display:flex;
+            gap:12px;
+            margin-top:22px;
+        }
+
+        .btn, button{
+            flex:1;
+            padding:13px;
+            border:none;
+            border-radius:10px;
+            font-size:15px;
+            font-weight:bold;
+            cursor:pointer;
+            text-align:center;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .back{
+            background:linear-gradient(135deg,#ede9fe,#e0e7ff);
+            color:#4c1d95;
+        }
+
+        .buy{
+            background:linear-gradient(135deg,#7c3aed,#3b82f6,#a5b4fc); /* purple → blue → pale blue */
+            color:white;
+        }
+
+        .buy:hover{
+            background:linear-gradient(135deg,#5b21b6,#1d4ed8,#818cf8);
+        }
+
+        footer{
+            margin-top:30px;
+            background:linear-gradient(135deg,#4c1d95,#2563eb,#e0e7ff);
+            color:white;
+            text-align:center;
+            padding:22px;
+        }
+
+        @media(max-width:900px){
+            .container{
+                grid-template-columns:1fr;
+            }
+
+            .image-box img{
+                height:320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="order.php" method="POST"></form>
+    <header>
+        <div class="logo">E-Shopping</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Products</a>
+            <a href="log.html">Login</a>
+            <a href="inscip.html">Register</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="image-box">
+            <img id="productImage" src="" alt="Selected product">
+        </div>
+
+        <div class="info-box">
+            <h1 id="productName">Product Name</h1>
+            <p class="ref">Reference: <span id="reference">-</span></p>
+            <p class="seller">Seller: <span id="seller">-</span></p>
+            <p class="price" id="price">0 DA</p>
+
+            <form>
+                <div class="form-group">
+                    <label>Scent Type</label>
+                    <div class="scent-options">
+                        <label><input type="radio" name="scent" value="Floral"> Floral</label>
+                        <label><input type="radio" name="scent" value="Woody"> Woody</label>
+                        <label><input type="radio" name="scent" value="Fruity"> Fruity</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select id="quantity" onchange="calculateTotal()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientName">Full Name</label>
+                    <input type="text" id="clientName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" placeholder="Enter your full address"></textarea>
+                </div>
+
+                <div class="total-box">
+                    Total: <span id="totalPrice">0 DA</span>
+                </div>
+
+                <div class="buttons">
+                    <a href="index.html" class="btn back">Back</a>
+                    <button type="submit" class="buy">Confirm Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>©️ Mehnana Salah Eddine</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const name = params.get("name");
+        const price = params.get("price");
+        const ref = params.get("ref");
+        const seller = params.get("seller");
+        const image = params.get("image");
+
+        document.getElementById("productName").textContent = name || "Product";
+        document.getElementById("reference").textContent = ref || "-";
+        document.getElementById("seller").textContent = seller || "-";
+        document.getElementById("price").textContent = price ? price + " DA" : "0 DA";
+        document.getElementById("productImage").src = image || "";
+        document.getElementById("productImage").alt = name || "Product";
+
+        function calculateTotal(){
+            const quantity = parseInt(document.getElementById("quantity").value) || 1;
+            const unitPrice = parseInt(price) || 0;
+            const total = quantity * unitPrice;
+            document.getElementById("totalPrice").textContent = total + " DA";
+        }
+
+        calculateTotal();
+    </script>
+
+</body>
+</html>
